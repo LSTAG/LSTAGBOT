@@ -31,7 +31,7 @@ class AntiAFK extends Command {
 			afk.setTitle(`__**AntiAFK Enabled**__`);
 			afk.setThumbnail(`https://crafatar.com/avatars/${bot.player.uuid}`);
 			afk.setDescription(
-				stripIndents`Successfully enabled anti AFK. The will now not get kicked for being idle.`
+				stripIndents`Successfully enabled anti AFK. You will now not get kicked for being idle.`
 			);
 			afk.setColor("#c36ba4");
 			afk.setTimestamp();
