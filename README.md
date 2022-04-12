@@ -8,7 +8,6 @@
 - Coord
 - Goto
 - Info
-- Kit
 - Mine
 - Say
 
