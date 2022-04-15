@@ -1,0 +1,14 @@
+{
+  "host": "",
+  "port": "",
+  "auth": "",
+  "username": "",
+  "password": "",
+  "guild": "",
+  "token": "",
+  "prefix": "",
+  "owner": "",
+  "ownername": "",
+  "successColor": "0x8ff442",
+  "errorColor": "0xf44242"
+}
