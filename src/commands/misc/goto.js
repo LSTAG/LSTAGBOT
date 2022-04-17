@@ -1,11 +1,11 @@
 /**
- * @file Sample ping command
- * @author Naman Vrati
+ * @file Goto command
+ * @author OBNinjaa
  * @since 1.0.0
  */
 
 const bot = require(`../../index`);
-const { prefix, successColor, errorColor } = require("./../../config.json");
+const { prefix, successColor, errorColor, infoColor } = require("./../../config.json");
 const { MessageEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
 
@@ -24,7 +24,7 @@ module.exports = {
 
   /**
    * @description Executes when the command is called by command handler.
-   * @author Naman Vrati
+   * @author OBNinjaa
    * @param {Object} message The Message Object of the command.
    * @param {String[]} args The Message Content of the received message seperated by spaces (' ') in an array, this excludes prefix and command/alias itself.
    */
@@ -63,7 +63,7 @@ module.exports = {
         successEmbed.setDescription(
           `**${bot.username}** has reached the location that you specified.\nYou can use \`${prefix}location\` to check if the location the bot is at is correct.`
         );
-        message.channel.send({ embeds: [successEmbed] });
+        return message.channel.send({ embeds: [successEmbed] });
       });
     });
   },

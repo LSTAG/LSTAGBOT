@@ -1,6 +1,6 @@
 /**
  * @file Ready Event File.
- * @author Naman Vrati
+ * @author OBNinjaa
  * @since 1.0.0
  */
 
@@ -21,7 +21,7 @@ module.exports = {
         `Discord bot ready!`.green
       }`
     );
-    client.user.setActivity(`In Development`, {
+    client.user.setActivity(`MINECRAFT`, {
       type: "STREAMING",
       url: "https://www.youtube.com/watch?v=5qap5aO4i9A",
     });

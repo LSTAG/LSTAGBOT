@@ -1,6 +1,6 @@
 /**
  * @file Sample ping command
- * @author Naman Vrati
+ * @author OBNinjaa
  * @since 1.0.0
  */
 
@@ -24,15 +24,11 @@ module.exports = {
 
   /**
    * @description Executes when the command is called by command handler.
-   * @author Naman Vrati
+   * @author OBNinjaa
    * @param {Object} message The Message Object of the command.
    */
 
   async execute(message) {
-    let x = bot.entity.position.x.toString().split(".");
-    let y = bot.entity.position.y.toString().split(".");
-    let z = bot.entity.position.z.toString().split(".");
-
     let locationEmbed = new MessageEmbed();
     locationEmbed.setColor(0x4286f4);
     locationEmbed.setTitle(`**${bot.username}** Location`);

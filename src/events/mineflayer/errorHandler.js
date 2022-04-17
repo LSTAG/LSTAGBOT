@@ -7,6 +7,6 @@ const colors = require("colors");
 
 module.exports = (bot) => {
   bot.on("error", (err) => {
-    console.log(err.message);
+    console.log(err.message.red);
   });
 };
