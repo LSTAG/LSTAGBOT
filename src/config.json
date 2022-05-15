@@ -9,7 +9,7 @@
   "prefix": "",
   "owner": "",
   "ownername": "",
-  "successColor": "0x8ff442",
-  "errorColor": "0xf44242",
-  "infoColor": "0xf49b42"
+  "successColor": "",
+  "errorColor": "",
+  "infoColor": ""
 }

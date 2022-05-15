@@ -8,16 +8,12 @@ const { ownername } = config;
  * @param {mineflayer.Bot} bot
  */
 
-// Credits to Pix3lPirat3
-
 module.exports = (bot) => {
   var regexTeleport = /([0-9a-zA-Z_]{1,16}) has requested (?:that you|to) teleport to (you|them)\./;
   var whitelist = [ownername];
-
   bot.on("messagestr", async function (message) {
     var match = regexTeleport.exec(message);
     if (!match) return;
-
     var username = match[1];
     var type = match[2] == "you" ? "to you" : "to them";
     console.log(

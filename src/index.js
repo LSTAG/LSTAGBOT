@@ -58,6 +58,17 @@ function initialize() {
     password: password,
     hideErrors: true,
   });
+
+  // Just abusing a servers /kit command lol
+  // setInterval(() => {
+  //   bot.chat(`/kit start`);
+  //   bot.inventory.items().forEach((item) => {
+  //     setTimeout(() => {
+  //       bot.tossStack(item);
+  //     }, 100);
+  //   });
+  // }, 5000);
+
   module.exports = bot;
   ScriptsLoad(bot);
 
@@ -92,7 +103,6 @@ for (const file of eventFiles) {
     client.on(event.name, async (...args) => await event.execute(...args, client));
   }
 }
-
 client.commands = new Collection();
 client.slashCommands = new Collection();
 client.buttonCommands = new Collection();
@@ -119,3 +129,5 @@ for (const folder of commandFolders) {
 }
 
 client.login(token);
+
+module.exports = client;

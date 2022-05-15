@@ -21,7 +21,7 @@ module.exports = {
         `Discord bot ready!`.green
       }`
     );
-    client.user.setActivity(`MINECRAFT`, {
+    client.user.setActivity(`dsc.gg/mineflayer`, {
       type: "STREAMING",
       url: "https://www.youtube.com/watch?v=5qap5aO4i9A",
     });
