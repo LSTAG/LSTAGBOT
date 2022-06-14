@@ -8,17 +8,22 @@ const db = new QuickDB();
  */
 
 module.exports = (bot) => {
-  bot.on("whisper", (username, message) => {
+  bot.on("whisper", async (username, message) => {
     if (message.startsWith("!kit")) {
+      const user = await db.has(`user_${username}`, true);
+      if (user) {
+        return bot.chat(`/msg ${username} You are on cooldown. Please wait 1 hour before using this command again.`);
+      }
+
       bot.chat(`/tpa ${username}`);
 
       bot.on("forcedMove", () => {
         bot.chat("/kill");
       });
 
-      db.set(username, true);
+      db.set(`user_${username}`, true);
       setTimeout(() => {
-        db.delete(username);
+        db.delete(`user_${username}`);
         return bot.chat(`/msg ${username} I have removed the cooldown. You can use the kit command again.`);
       }, 3.6e6);
     }
