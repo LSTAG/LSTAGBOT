@@ -10,6 +10,7 @@ const { ownername } = config;
 
 module.exports = (bot) => {
   var regexTeleport = /([0-9a-zA-Z_]{1,16}) has requested (?:that you|to) teleport to (you|them)\./;
+
   var whitelist = [ownername];
   bot.on("messagestr", async function (message) {
     var match = regexTeleport.exec(message);
@@ -23,6 +24,5 @@ module.exports = (bot) => {
     );
     if (!whitelist.includes(username)) return;
     bot.chat("/tpaccept");
-    bot.chat("/tpy " + username);
   });
 };

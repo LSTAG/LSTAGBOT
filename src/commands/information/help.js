@@ -13,6 +13,7 @@ module.exports = {
   aliases: ["commands"],
   usage: "[command name]",
   cooldown: 5,
+  category: "information",
 
   /**
    * @description Executes when the command is called by command handler.
@@ -30,23 +31,16 @@ module.exports = {
        * @description Help command embed object
        */
 
-      let helpEmbed = new MessageEmbed()
-        .setColor(0x4286f4)
-        .setThumbnail(message.client.user.displayAvatarURL())
-        .setURL(process.env.URL)
-        .setTitle("List of all my commands")
-        .setDescription("`" + commands.map((command) => command.name).join("`, `") + "`")
+      let helpEmbed = new MessageEmbed();
+      helpEmbed.setColor(0x4286f4);
+      helpEmbed.setThumbnail(message.client.user.displayAvatarURL());
+      helpEmbed.setURL(process.env.URL);
+      helpEmbed.setTitle("List of all my commands");
+      helpEmbed.setDescription("`" + commands.map((command) => command.name).join("`, `") + "`");
 
-        .addField(
-          "Usage",
-          `\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`
-        );
-
-      return message.channel.send({ embeds: [helpEmbed] }).catch((error) => {
-        console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-
-        message.reply({ content: "It seems like I can't DM you!" });
-      });
+      helpEmbed.addField("Usage", `\nYou can send \`${prefix}help [command name]\` for info on a specific command!`);
+      helpEmbed.addField("Quick Links", `\n[**Support Server**](https://discord.gg/numgPDvq5Q) \n[**GitHub**](https://github.com/OBNinjaa/)`);
+      return message.channel.send({ embeds: [helpEmbed] });
     }
 
     /**
@@ -61,8 +55,7 @@ module.exports = {
      * @description The command object
      */
 
-    const command =
-      commands.get(name) || commands.find((c) => c.aliases && c.aliases.includes(name));
+    const command = commands.get(name) || commands.find((c) => c.aliases && c.aliases.includes(name));
 
     if (!command) {
       return message.reply({ content: "That's not a valid command!" });
@@ -78,11 +71,8 @@ module.exports = {
     if (command.description) commandEmbed.setDescription(`${command.description}`);
 
     if (command.aliases)
-      commandEmbed
-        .addField("Aliases", `\`${command.aliases.join(", ")}\``, true)
-        .addField("Cooldown", `${command.cooldown || 3} second(s)`, true);
-    if (command.usage)
-      commandEmbed.addField("Usage", `\`${prefix}${command.name} ${command.usage}\``, true);
+      commandEmbed.addField("Aliases", `\`${command.aliases.join(", ")}\``, true).addField("Cooldown", `${command.cooldown || 3} second(s)`, true);
+    if (command.usage) commandEmbed.addField("Usage", `\`${prefix}${command.name} ${command.usage}\``, true);
 
     message.channel.send({ embeds: [commandEmbed] });
   },

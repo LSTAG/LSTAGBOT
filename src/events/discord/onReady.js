@@ -16,14 +16,9 @@ module.exports = {
    * @param {Object} client Main Application Client
    */
   execute(client) {
-    console.log(
-      `[${new Date().toLocaleTimeString().gray}] [${client.user.tag.yellow}] ${
-        `Discord bot ready!`.green
-      }`
-    );
-    client.user.setActivity(`dsc.gg/mineflayer`, {
-      type: "STREAMING",
-      url: "https://www.youtube.com/watch?v=5qap5aO4i9A",
+    console.log(`[${new Date().toLocaleTimeString().gray}] [${client.user.tag.yellow}] ${`Discord bot ready!`.green}`);
+    client.user.setActivity(`Created by OBNinjaa`, {
+      type: "PLAYING",
     });
   },
 };

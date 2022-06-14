@@ -7,7 +7,6 @@
 const bot = require(`../../index`);
 const { prefix, successColor, errorColor } = require("./../../config.json");
 const { MessageEmbed } = require("discord.js");
-const { stripIndents } = require("common-tags");
 
 const { pathfinder, Movements } = require("mineflayer-pathfinder");
 const { GoalBlock } = require("mineflayer-pathfinder").goals;
@@ -18,9 +17,10 @@ module.exports = {
   name: "location",
   description: "This commands shows the current location of the bot.",
   aliases: ["location", "coords"],
-  usage: "",
+  usage: "location",
   cooldown: 5,
   args: false,
+  category: "information",
 
   /**
    * @description Executes when the command is called by command handler.
@@ -34,12 +34,9 @@ module.exports = {
     const Z = bot.entity.position.z.toFixed(1);
 
     let locationEmbed = new MessageEmbed();
-    locationEmbed.setColor(0x4286f4);
+    locationEmbed.setColor(successColor);
     locationEmbed.setTitle(`**${bot.username}** Location`);
-    locationEmbed.addField(
-      stripIndents`The current location for **${bot.username}**:`,
-      `\n**X:** ${X}\n**Y:** ${Y}\n**Z:** ${Z}`
-    );
+    locationEmbed.addField(`The current location for **${bot.username}**:`, `\n**X:** ${X}\n**Y:** ${Y}\n**Z:** ${Z}`);
 
     return message.channel.send({ embeds: [locationEmbed] });
   },

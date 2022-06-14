@@ -7,13 +7,6 @@
 const bot = require(`../../index`);
 const { prefix, successColor, errorColor, infoColor } = require("./../../config.json");
 const { MessageEmbed } = require("discord.js");
-const { stripIndents } = require("common-tags");
-
-const collectBlock = require("mineflayer-collectblock").plugin;
-
-bot.loadPlugin(collectBlock);
-
-let mcData;
 
 module.exports = {
   name: "mine",
@@ -22,6 +15,7 @@ module.exports = {
   usage: "diamond_ore",
   cooldown: 5,
   args: true,
+  category: "automation",
 
   /**
    * @description Executes when the command is called by command handler.
@@ -30,9 +24,5 @@ module.exports = {
    * @param {String[]} args The Message Content of the received message seperated by spaces (' ') in an array, this excludes prefix and command/alias itself.
    */
 
-  async execute(message, args) {
-    mcData = require("minecraft-data")(bot.version);
-
-    // mining code
-  },
+  async execute(message, args) {},
 };

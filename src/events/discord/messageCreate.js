@@ -70,9 +70,7 @@ module.exports = {
      * @type {Object}
      */
 
-    const command =
-      client.commands.get(commandName) ||
-      client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
+    const command = client.commands.get(commandName) || client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
 
     if (!command) return;
 
@@ -119,9 +117,7 @@ module.exports = {
       if (now < expirationTime) {
         const timeLeft = (expirationTime - now) / 1000;
         return message.reply({
-          content: `please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${
-            command.name
-          }\` command.`,
+          content: `please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`,
         });
       }
     }

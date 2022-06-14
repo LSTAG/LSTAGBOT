@@ -21,6 +21,7 @@ module.exports = {
   usage: "OBNinjaa",
   cooldown: 5,
   args: true,
+  category: "automation",
 
   /**
    * @description Executes when the command is called by command handler.
@@ -38,16 +39,27 @@ module.exports = {
       errorEmbed.addField("Player not found!", `\nPlease check the player's name and try again.`);
       return message.channel.send({ embeds: [errorEmbed] });
     }
-
+    bot.on("stoppedAttacking", () => {
+      const successEmbed = new MessageEmbed();
+      successEmbed.setColor(successColor);
+      successEmbed.setThumbnail(`https://crafatar.com/renders/head/${player.entity.uuid}?overlay`);
+      successEmbed.setTitle(`**Attack Stopped!**`);
+      successEmbed.addField(
+        `**${bot.username}** has stopped attacking **${player.username}**!`,
+        `\nYou can enter ${prefix}stats to check the bots health and other basic information.`
+      );
+      return message.channel.send({ embeds: [successEmbed] });
+    });
     bot.pvp
-      .attack(player.entity)
+      .attack(player.entity, (speed = 1))
       .then(() => {
         const successEmbed = new MessageEmbed();
         successEmbed.setColor(successColor);
-        successEmbed.setTitle(`**Attck Commenced!**`);
+        successEmbed.setThumbnail(`https://crafatar.com/renders/head/${player.entity.uuid}?overlay`);
+        successEmbed.setTitle(`**Attack Commenced!**`);
         successEmbed.addField(
-          "I have begun attacking the player you specified!",
-          `\nPlayer: **${player.username}**.`
+          `**${bot.username}** is now attacking **${player.username}**!`,
+          `\nYou will be notified when **${player.username}** is dead.`
         );
         return message.channel.send({ embeds: [successEmbed] });
       })
@@ -58,10 +70,5 @@ module.exports = {
         errorEmbed.addField("An error occurred", `\n${error}`);
         return message.channel.send({ embeds: [errorEmbed] });
       });
-    bot.on("chat", (username, message) => {
-      if (username === args[0] && message === "stop") {
-        bot.pvp.stop();
-      }
-    });
   },
 };
