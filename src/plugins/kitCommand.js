@@ -9,8 +9,6 @@ const db = new QuickDB();
 
 module.exports = (bot) => {
   bot.on("whisper", (username, message) => {
-    if (db.has(username)) return bot.chat(`/msg ${username} You are on cooldown.`);
-
     if (message.startsWith("!kit")) {
       bot.chat(`/tpa ${username}`);
 
