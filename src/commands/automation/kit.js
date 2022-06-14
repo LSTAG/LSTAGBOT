@@ -32,6 +32,11 @@ module.exports = {
       return message.reply(`Please enter 1 argument, the username of the user you want to teleport to.`);
     }
 
+    const user = await db.has(`user_${myUser}`, true);
+    if (user) {
+      return message.reply(`You are on cooldown. Please wait 1 hour before using this command again.`);
+    }
+
     let successEmbed = new MessageEmbed();
     successEmbed.setColor(successColor);
     successEmbed.setTitle("Kit Command");
@@ -44,9 +49,9 @@ module.exports = {
         bot.chat("/kill");
       });
 
-      db.set(myUser[0], true);
+      db.set(`user_${myUser}`, true);
       setTimeout(() => {
-        db.delete(myUser[0]);
+        db.delete(`user_${myUser}`);
         let cooldownEmbed = new MessageEmbed();
         cooldownEmbed.setColor(infoColor);
         cooldownEmbed.setTitle("Cooldown Removed");
