@@ -32,8 +32,6 @@ module.exports = {
       return message.reply(`Please enter 1 argument, the username of the user you want to teleport to.`);
     }
 
-    if (db.has(myUser[0])) return message.reply(`${myUser[0]} is on cooldown.`);
-
     let successEmbed = new MessageEmbed();
     successEmbed.setColor(successColor);
     successEmbed.setTitle("Kit Command");
