@@ -1,6 +1,6 @@
 # Mineflayer Discord Bot
 
-<a href="https://discord.gg/numgPDvq5Q"><img src="https://discord.com/api/guilds/883397209306038272/widget.png?style=banner2" alt="Discord Server"/></a>
+<a href="https://discord.gg/numgPDvq5Q"><img src="https://discord.com/api/guilds/883397209306038272/widget.png?style=shield" alt="Discord Server"/></a>
 
 ## CONFIGURATION
 - host -> server ip address
