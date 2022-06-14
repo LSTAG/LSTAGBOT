@@ -15,7 +15,7 @@
 - ownername -> your own minecraft username e.g OBNinjaa
 - successColor -> seccess embed color e.g 0x8ff442 0xf44242
 - errorColor -> error embed color e.g 0xf44242
-
+- infoColor -> Information color e.g 0xf46e42
 
 ```json
 {
@@ -30,6 +30,7 @@
   "owner": "709202831760162910",
   "ownername": "OBNinjaa",
   "successColor": "0x8ff442",
-  "errorColor": "0xf44242"
+  "errorColor": "0xf44242",
+  "infoColor": "0xf46e42"
 }
 ```
