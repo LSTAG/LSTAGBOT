@@ -12,8 +12,8 @@ if (Number(process.version.slice(1).split(".")[0]) < 10 && Number(process.versio
 }
 
 const config = require("./config.json");
-const { host, port, version, auth, username, password, guild, token, prefix, owner, ownername } = config;
-if (!host || !version || !auth || !username || !password || !guild || !token || !prefix || !owner || !ownername) {
+const { host, port, version, auth, username, password, hookid, hooktoken, ehookid, ehooktoken, token, prefix, ownername } = config;
+if (!host || !version || !auth || !username || !password || !hookid || !hooktoken || !ehookid || !ehooktoken || !token || !prefix || !ownername) {
   console.error(`[!] You must fill out the config!`.red);
   console.log(`[!] Located in ${__dirname.yellow}`.red);
   process.exit(1);
@@ -52,6 +52,10 @@ function initialize() {
 
   module.exports = bot;
   ScriptsLoad(bot);
+
+  // setInterval(() => {
+  //   bot.chat(`Need a kit then join -> https://discord.gg/GZap2Bkd26`);
+  // }, 30000);
 
   bot.on("end", (reason) => {
     console.log(`[${new Date().toLocaleTimeString().gray}] ${`Disconnected`.red}`, colors.yellow(`Attemp to reconnect in 5 seconds`));

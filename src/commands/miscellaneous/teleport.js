@@ -34,19 +34,10 @@ module.exports = {
     userToEmbed.setTitle("Teleporting Started!");
     userToEmbed
       .setDescription(
-        `**${bot.username}** is now teleporting to the user that you specified.\nYou can use \`${prefix}location\` to check the current location.`
+        `**${bot.username}** has sent a teleport request to **${userTo}**.\nYou can use \`${prefix}location\` to check the current location.`
       )
-      .addField(`User currently set:`, `\n**User:** ${userTo[0]}`);
-    return message.channel.send({ embeds: [userToEmbed] }).then(() => {
-      bot.chat(`/tpa ${userTo[0]}`);
-      bot.on("player_move", () => {
-        let successEmbed = new MessageEmbed();
-        successEmbed = new MessageEmbed();
-        successEmbed.setColor(successColor);
-        successEmbed.setTitle("Teleporting Successful!");
-        successEmbed.setDescription(`**${bot.username}** has successfully teleported to the user that you specified.`);
-        return message.channel.send({ embeds: [successEmbed] });
-      });
-    });
+      .addField(`User currently set:`, `\n**User:** **${userTo[0]}**`);
+    message.channel.send({ embeds: [userToEmbed] });
+    bot.chat(`/tpa ${userTo[0]}`);
   },
 };

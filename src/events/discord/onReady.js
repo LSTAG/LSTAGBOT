@@ -17,8 +17,12 @@ module.exports = {
    */
   execute(client) {
     console.log(`[${new Date().toLocaleTimeString().gray}] [${client.user.tag.yellow}] ${`Discord bot ready!`.green}`);
-    client.user.setActivity(`Created by OBNinjaa`, {
-      type: "PLAYING",
-    });
+    const statuses = [`Created by OBNinjaa`, `dsc.gg/mineflayer`];
+    setInterval(() => {
+      client.user.setActivity(statuses[Math.floor(Math.random() * statuses.length)], {
+        type: "STREAMING",
+        url: "https://www.youtube.com/watch?v=oHg5SJYRHA0&t=31s",
+      });
+    }, 10000);
   },
 };

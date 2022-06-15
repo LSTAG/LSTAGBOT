@@ -9,7 +9,7 @@ const { ownername } = config;
  */
 
 module.exports = (bot) => {
-  var regexTeleport = /([0-9a-zA-Z_]{1,16}) has requested (?:that you|to) teleport to (you|them)\./;
+  var regexTeleport = /([0-9a-zA-Z_]{1,16}) has requested (?:that you|to) teleport to (you|them)\./; // This varies depending on the server (this is for essentials)
 
   var whitelist = [ownername];
   bot.on("messagestr", async function (message) {
@@ -17,12 +17,8 @@ module.exports = (bot) => {
     if (!match) return;
     var username = match[1];
     var type = match[2] == "you" ? "to you" : "to them";
-    console.log(
-      `[${new Date().toLocaleTimeString().gray}] [${username.green}] ${
-        `has requested a teleport`.yellow
-      } ${type.yellow}`
-    );
+    console.log(`[${new Date().toLocaleTimeString().gray}] [${username.green}] ${`has requested a teleport`.yellow} ${type.yellow}`);
     if (!whitelist.includes(username)) return;
-    bot.chat("/tpaccept");
+    bot.chat("/tpaccept"); // same for this
   });
 };

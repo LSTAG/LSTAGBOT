@@ -14,7 +14,7 @@ const db = new QuickDB();
 module.exports = {
   name: "kit",
   description: "This command if for anarchy servera. The bot teleports and drops the kit on the floor.",
-  aliases: ["", ""],
+  aliases: ["kitbot"],
   usage: "OBNinjaa",
   cooldown: 5,
   args: true,
