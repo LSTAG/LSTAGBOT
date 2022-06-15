@@ -53,10 +53,6 @@ function initialize() {
   module.exports = bot;
   ScriptsLoad(bot);
 
-  // setInterval(() => {
-  //   bot.chat(`Need a kit then join -> https://discord.gg/GZap2Bkd26`);
-  // }, 30000);
-
   bot.on("end", (reason) => {
     console.log(`[${new Date().toLocaleTimeString().gray}] ${`Disconnected`.red}`, colors.yellow(`Attemp to reconnect in 5 seconds`));
     setTimeout(() => initialize(), 5000);
