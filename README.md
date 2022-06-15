@@ -4,14 +4,17 @@
 
 ## CONFIGURATION
 - host -> server ip address
+- version -> server version e.g 1.18.2
 - port -> server port (leave blank if your host is e.g myserver.net)
 - auth -> mojang & microsoft (use microsoft if you have migrated your account)
 - username -> email address
 - password -> password
-- guild -> guild id the bot is used in
+- hookid -> webhook id
+- hoodtoken -> webhook token
+- ehookid -> events webhook id
+- ehooktoken -> events webhook token
 - token -> discord bot token
-- prefix -> bot prefix e.g !
-- owner -> your discord user id
+- prefix -> bot prefix e.g c.
 - ownername -> your own minecraft username e.g OBNinjaa
 - successColor -> seccess embed color e.g 0x8ff442 0xf44242
 - errorColor -> error embed color e.g 0xf44242
@@ -19,15 +22,18 @@
 
 ```json
 {
-  "host": "1.0.0.7",
+  "host": "192.168.0.1",
+  "version": "1.18.2",
   "port": "25565",
   "auth": "microsoft",
-  "username": "email@gmail.com",
+  "username": "email@mail.com",
   "password": "Password123",
-  "guild": "944736203968753664",
-  "token": "NDA1Nzg3MDk4Nzg0NzI3MDQw.Xg03uQ.LKJGQC5rDDMLu8WuidLEMcXSPdU",
+  "hookid": "webhook id",
+  "hooktoken": "webhook token",
+  "ehookid": "event webhook id",
+  "ehooktoken": "event webhook token",
+  "token": "discord bot token",
   "prefix": "c.",
-  "owner": "709202831760162910",
   "ownername": "OBNinjaa",
   "successColor": "0x8ff442",
   "errorColor": "0xf44242",
