@@ -1,15 +1,18 @@
 {
   "host": "",
+  "version": "",
   "port": "",
   "auth": "",
   "username": "",
   "password": "",
-  "guild": "",
+  "hookid": "",
+  "hooktoken": "",
+  "ehookid": "",
+  "ehooktoken": "",
   "token": "",
   "prefix": "",
-  "owner": "",
   "ownername": "",
-  "successColor": "",
-  "errorColor": "",
-  "infoColor": ""
+  "successColor": "0x8ff442",
+  "errorColor": "0xf44242",
+  "infoColor": "0xf46e42"
 }
