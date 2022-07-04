@@ -20,22 +20,22 @@ if (!host || !version || !auth || !username || !password || !hookid || !hooktoke
 }
 
 function ScriptsLoad(bot) {
-  const COMMANDS_DIR = path.join(__dirname, "plugins");
+ //  const COMMANDS_DIR = path.join(__dirname, "plugins");
   const EVENTS_DIR = path.join(__dirname, "events/mineflayer");
 
-  const commands = fs
-    .readdirSync(COMMANDS_DIR)
-    .filter((x) => x.endsWith(".js"))
-    .map((pluginName) => require(path.join(COMMANDS_DIR, pluginName)));
+ // const commands = fs
+ //   .readdirSync(COMMANDS_DIR)
+ //   .filter((x) => x.endsWith(".js"))
+ //   .map((pluginName) => require(path.join(COMMANDS_DIR, pluginName)));
   const events = fs
     .readdirSync(EVENTS_DIR)
     .filter((x) => x.endsWith(".js"))
     .map((pluginName) => require(path.join(EVENTS_DIR, pluginName)));
 
-  bot.loadPlugins(commands);
+ // bot.loadPlugins(commands);
   bot.loadPlugins(events);
 
-  console.log(`[${new Date().toLocaleTimeString().gray}] ${`Loaded ${commands.length} commands`.green}`);
+ // console.log(`[${new Date().toLocaleTimeString().gray}] ${`Loaded ${commands.length} commands`.green}`);
   console.log(`[${new Date().toLocaleTimeString().gray}] ${`Loaded ${events.length} events`.green}`);
 }
 
