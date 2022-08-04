@@ -2,6 +2,15 @@
 
 <a href="https://discord.gg/numgPDvq5Q"><img src="https://discord.com/api/guilds/883397209306038272/widget.png?style=shield" alt="Discord Server"/></a>
 
+##
+kit bot
+and tons more
+
+
+
+
+
+
 ## CONFIGURATION
 - host -> server ip address
 - version -> server version e.g 1.18.2
