@@ -4,9 +4,13 @@
 
 ## FEATURES
 -Kit Bot with auto tpa(0b0t.org)
+
 -Auto PvP
+
 -Auto Mine
+
 -Look
+
 -Discord Controls(!send, !location, !hunt, !kill, etc.
 
 MADE BY OBNinjaa
