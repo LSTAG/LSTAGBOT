@@ -11,6 +11,8 @@
 
 -Look
 
+-Auto Tpa Accept
+
 -Discord Controls(!send, !location, !hunt, !kill, etc.
 
 MADE BY OBNinjaa
