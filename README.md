@@ -2,10 +2,14 @@
 
 <a href="https://discord.gg/numgPDvq5Q"><img src="https://discord.com/api/guilds/883397209306038272/widget.png?style=shield" alt="Discord Server"/></a>
 
-##
-kit bot
-and tons more
+## FEATURES
+-Kit Bot with auto tpa(0b0t.org)
+-Auto PvP
+-Auto Mine
+-Look
+-Discord Controls(!send, !location, !hunt, !kill, etc.
 
+MADE BY OBNinjaa
 
 
 
